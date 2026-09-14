@@ -1,16 +1,6 @@
 {
-  "generated_at": "2026-09-14T12:53:01.870869Z",
+  "generated_at": "2026-09-14T13:06:15.229741Z",
   "news": [
-    {
-      "date": "2026-09-14",
-      "channel": "Anthropic News",
-      "title": "Try Claude",
-      "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
-      "content": "官方页面已更新，需人工复核具体变更内容。",
-      "url": "https://claude.ai/",
-      "source": "Anthropic News",
-      "status": "official-source"
-    },
     {
       "date": "2026-09-14",
       "channel": "百度智能云",
@@ -89,6 +79,13 @@
       "url": "https://openai.com/news/",
       "error": "HTTP Error 403: Forbidden",
       "used_fallback": "yes"
+    },
+    {
+      "source": "Anthropic News",
+      "channel": "Anthropic News",
+      "url": "https://www.anthropic.com/news",
+      "error": "HTTP Error 403: Forbidden",
+      "used_fallback": "no"
     }
   ]
 }
