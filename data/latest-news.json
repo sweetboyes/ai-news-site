@@ -1,0 +1,94 @@
+{
+  "generated_at": "2026-09-14T12:53:01.870869Z",
+  "news": [
+    {
+      "date": "2026-09-14",
+      "channel": "Anthropic News",
+      "title": "Try Claude",
+      "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
+      "content": "官方页面已更新，需人工复核具体变更内容。",
+      "url": "https://claude.ai/",
+      "source": "Anthropic News",
+      "status": "official-source"
+    },
+    {
+      "date": "2026-09-14",
+      "channel": "百度智能云",
+      "title": "AI原生应用商店",
+      "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
+      "content": "精选众多AI原生应用，依托前沿的大模型能力，为企业与优秀AI应用搭建桥梁，推动企业业务增长和创新发展",
+      "url": "https://qianfanmarket.baidu.com/",
+      "source": "百度智能云新闻",
+      "status": "official-source"
+    },
+    {
+      "date": "2026-09-14",
+      "channel": "腾讯云",
+      "title": "Latest AI update",
+      "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
+      "content": "官方页面已更新，需人工复核具体变更内容。",
+      "url": "https://cloud.tencent.com/developer/news",
+      "source": "腾讯云动态",
+      "status": "official-source"
+    },
+    {
+      "date": "2026-09-10",
+      "channel": "OpenAI 官网",
+      "title": "OpenAI 发布 Agents API 公测",
+      "background": "OpenAI 官网在自动抓取中可能返回 403；此条为人工核验过的保底条目，页面会继续保留原始来源链接。",
+      "content": "Agents API 将 Codex 背后的 agent harness 和基础设施开放给开发者，支持托管沙箱、MCP、工具搜索、并行子代理和长会话压缩。",
+      "url": "https://openai.com/index/introducing-the-agents-api/",
+      "source": "OpenAI News",
+      "status": "manual-verified-fallback"
+    },
+    {
+      "date": "2026-09-10",
+      "channel": "百度 AI 开放平台",
+      "title": "未实名 立即认证",
+      "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
+      "content": "官方页面已更新，需人工复核具体变更内容。",
+      "url": "https://console.bce.baidu.com/qualify/#/qualify/index",
+      "source": "百度 AI 开放平台",
+      "status": "official-source"
+    },
+    {
+      "date": "2026-08-13",
+      "channel": "Microsoft Source",
+      "title": "Signal blog",
+      "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
+      "content": "Find out what’s new and what’s next for AI and tech — directly from Microsoft.",
+      "url": "https://news.microsoft.com/signal/",
+      "source": "Microsoft Source AI",
+      "status": "official-source"
+    },
+    {
+      "date": "2023-12-06",
+      "channel": "Google Blog",
+      "title": "Google DeepMind",
+      "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
+      "content": "News from Google DeepMind about how we're building AI responsibly to benefit everyone.",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/",
+      "source": "Google AI Blog",
+      "status": "official-source"
+    },
+    {
+      "date": "2022-12-06",
+      "channel": "腾讯官网",
+      "title": "Skip to main content",
+      "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
+      "content": "官方页面已更新，需人工复核具体变更内容。",
+      "url": "https://www.tencent.com/zh-cn/newsroom/all-news/#main",
+      "source": "腾讯新闻",
+      "status": "official-source"
+    }
+  ],
+  "failures": [
+    {
+      "source": "OpenAI News",
+      "channel": "OpenAI 官网",
+      "url": "https://openai.com/news/",
+      "error": "HTTP Error 403: Forbidden",
+      "used_fallback": "yes"
+    }
+  ]
+}

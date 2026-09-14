@@ -5,560 +5,160 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>AI Frontier Radar</title>
   <style>
-    :root {
-      color-scheme: dark;
-      --bg: #050608;
-      --paper: #f6f7f9;
-      --ink: #f5f7fb;
-      --muted: #9da7b6;
-      --line: rgba(255,255,255,.13);
-      --blue: #4da3ff;
-      --blue-2: #87c5ff;
-      --panel: #0c0f14;
-      --panel-2: #11151d;
-      --ok: #8fd6b4;
-      --warn: #f2cf7e;
-    }
-
+    :root { color-scheme: dark; --bg:#050608; --paper:#f6f7f9; --ink:#f5f7fb; --muted:#9da7b6; --line:rgba(255,255,255,.13); --blue:#4da3ff; --blue-2:#87c5ff; --panel:#0c0f14; --panel-2:#11151d; --ok:#8fd6b4; --warn:#f2cf7e; }
     * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      letter-spacing: 0;
-    }
-
-    a { color: inherit; }
-
-    .shell {
-      width: min(1180px, calc(100% - 36px));
-      margin: 0 auto;
-    }
-
-    header {
-      min-height: 92vh;
-      display: grid;
-      align-items: center;
-      border-bottom: 1px solid var(--line);
-      background:
-        linear-gradient(115deg, rgba(5,6,8,.96) 0%, rgba(5,6,8,.84) 56%, rgba(15,31,48,.62) 100%),
-        url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80") center / cover;
-    }
-
-    nav {
-      position: fixed;
-      inset: 0 0 auto;
-      z-index: 20;
-      border-bottom: 1px solid rgba(255,255,255,.1);
-      background: rgba(5,6,8,.78);
-      backdrop-filter: blur(18px);
-    }
-
-    .nav-inner {
-      width: min(1180px, calc(100% - 36px));
-      margin: 0 auto;
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 760;
-    }
-
-    .mark {
-      width: 26px;
-      height: 26px;
-      border: 1px solid var(--blue);
-      display: grid;
-      place-items: center;
-      color: var(--blue-2);
-      font-size: 13px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-    }
-
-    .hero {
-      padding-top: 84px;
-      max-width: 900px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: var(--blue-2);
-      text-transform: uppercase;
-      font-size: 12px;
-      font-weight: 760;
-      letter-spacing: .08em;
-      margin-bottom: 22px;
-    }
-
-    .pulse {
-      width: 8px;
-      height: 8px;
-      background: var(--blue);
-      box-shadow: 0 0 24px var(--blue);
-    }
-
-    h1 {
-      margin: 0;
-      max-width: 820px;
-      font-size: clamp(48px, 8vw, 116px);
-      line-height: .91;
-      font-weight: 820;
-    }
-
-    .hero p {
-      max-width: 680px;
-      margin: 28px 0 0;
-      color: #d7dde6;
-      font-size: clamp(18px, 2.2vw, 24px);
-      line-height: 1.55;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 36px;
-    }
-
-    .chip {
-      border: 1px solid var(--line);
-      color: #dbe6f5;
-      padding: 8px 11px;
-      font-size: 13px;
-      background: rgba(255,255,255,.04);
-    }
-
-    .family-note {
-      width: fit-content;
-      margin-top: 24px;
-      padding: 14px 18px;
-      border-left: 4px solid var(--blue);
-      background: rgba(255,255,255,.07);
-      color: var(--paper);
-      font-size: clamp(19px, 2.6vw, 30px);
-      font-weight: 850;
-      line-height: 1.25;
-      box-shadow: 0 18px 60px rgba(0,0,0,.25);
-    }
-
-    main {
-      background: var(--bg);
-    }
-
-    section {
-      padding: 76px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 20px;
-      align-items: end;
-      margin-bottom: 30px;
-    }
-
-    h2 {
-      margin: 0;
-      font-size: clamp(30px, 4vw, 54px);
-      line-height: 1;
-    }
-
-    .section-note {
-      color: var(--muted);
-      max-width: 600px;
-      line-height: 1.7;
-    }
-
-    .date-pill {
-      border-left: 2px solid var(--blue);
-      padding-left: 14px;
-      color: #dce7f6;
-      font-size: 14px;
-      white-space: nowrap;
-    }
-
-    .news-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .news-item {
-      border: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.02));
-      padding: 22px;
-      min-height: 320px;
-      display: grid;
-      grid-template-rows: auto auto 1fr auto;
-      gap: 16px;
-    }
-
-    .news-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 14px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .source-tag {
-      color: var(--blue-2);
-      font-weight: 700;
-    }
-
-    .news-item h3 {
-      margin: 0;
-      font-size: 24px;
-      line-height: 1.18;
-    }
-
-    .news-copy {
-      display: grid;
-      gap: 10px;
-      color: #c8d0dc;
-      line-height: 1.65;
-      font-size: 15px;
-    }
-
-    .label {
-      color: var(--paper);
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-
-    .card-link {
-      width: fit-content;
-      color: var(--paper);
-      text-decoration: none;
-      border-bottom: 1px solid var(--blue);
-      padding-bottom: 4px;
-      font-size: 14px;
-    }
-
-    .verify-band {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .panel {
-      border: 1px solid var(--line);
-      background: var(--panel);
-      padding: 24px;
-    }
-
-    .panel h3 {
-      margin: 0 0 14px;
-      font-size: 22px;
-    }
-
-    .checks {
-      display: grid;
-      gap: 12px;
-      color: #d1d8e2;
-      line-height: 1.6;
-    }
-
-    .check {
-      display: grid;
-      grid-template-columns: 13px 1fr;
-      gap: 10px;
-      align-items: start;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      margin-top: 8px;
-      background: var(--ok);
-    }
-
-    .watchlist {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-    }
-
-    .watchlist span {
-      padding: 8px 10px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.035);
-      color: #d8dee8;
-      font-size: 13px;
-    }
-
-    .watchlist .pending {
-      color: var(--warn);
-      border-color: rgba(242,207,126,.32);
-    }
-
-    .papers {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-    }
-
-    .paper {
-      border: 1px solid var(--line);
-      background: var(--panel-2);
-      padding: 20px;
-      display: grid;
-      gap: 12px;
-      min-height: 270px;
-    }
-
-    .paper h3 {
-      margin: 0;
-      font-size: 19px;
-      line-height: 1.25;
-    }
-
-    .paper p {
-      margin: 0;
-      color: #c4ccd8;
-      line-height: 1.6;
-      font-size: 14px;
-    }
-
-    .paper-meta {
-      color: var(--blue-2);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .source-list {
-      columns: 2;
-      column-gap: 32px;
-      color: #c8d0dc;
-      line-height: 1.9;
-      font-size: 14px;
-    }
-
-    .source-list a {
-      color: #dfe7f3;
-      text-decoration-color: rgba(77,163,255,.7);
-    }
-
-    footer {
-      padding: 36px 0 52px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    @media (max-width: 860px) {
-      .nav-links { display: none; }
-      .section-head,
-      .verify-band,
-      .news-grid,
-      .papers {
-        grid-template-columns: 1fr;
-      }
-      .date-pill { white-space: normal; }
-      .source-list { columns: 1; }
-      header { min-height: 88vh; }
-      .news-item { min-height: auto; }
-    }
+    body { margin:0; font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif; background:var(--bg); color:var(--ink); letter-spacing:0; }
+    a { color:inherit; }
+    .shell { width:min(1180px, calc(100% - 36px)); margin:0 auto; }
+    header { min-height:92vh; display:grid; align-items:center; border-bottom:1px solid var(--line); background:linear-gradient(115deg, rgba(5,6,8,.96) 0%, rgba(5,6,8,.84) 56%, rgba(15,31,48,.62) 100%), url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80") center / cover; }
+    nav { position:fixed; inset:0 0 auto; z-index:20; border-bottom:1px solid rgba(255,255,255,.1); background:rgba(5,6,8,.78); backdrop-filter:blur(18px); }
+    .nav-inner { width:min(1180px, calc(100% - 36px)); margin:0 auto; height:64px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:760; }
+    .mark { width:26px; height:26px; border:1px solid var(--blue); display:grid; place-items:center; color:var(--blue-2); font-size:13px; }
+    .nav-links { display:flex; gap:18px; color:var(--muted); font-size:14px; }
+    .nav-links a { text-decoration:none; }
+    .hero { padding-top:84px; max-width:900px; }
+    .eyebrow { display:inline-flex; align-items:center; gap:9px; color:var(--blue-2); text-transform:uppercase; font-size:12px; font-weight:760; letter-spacing:.08em; margin-bottom:22px; }
+    .pulse { width:8px; height:8px; background:var(--blue); box-shadow:0 0 24px var(--blue); }
+    h1 { margin:0; max-width:820px; font-size:clamp(48px, 8vw, 116px); line-height:.91; font-weight:820; }
+    .hero p { max-width:680px; margin:28px 0 0; color:#d7dde6; font-size:clamp(18px, 2.2vw, 24px); line-height:1.55; }
+    .hero-meta { display:flex; flex-wrap:wrap; gap:10px; margin-top:36px; }
+    .chip { border:1px solid var(--line); color:#dbe6f5; padding:8px 11px; font-size:13px; background:rgba(255,255,255,.04); }
+    .family-note { width:fit-content; margin-top:24px; padding:14px 18px; border-left:4px solid var(--blue); background:rgba(255,255,255,.07); color:var(--paper); font-size:clamp(19px, 2.6vw, 30px); font-weight:850; line-height:1.25; box-shadow:0 18px 60px rgba(0,0,0,.25); }
+    .status-alert { margin-top:28px; padding:18px 20px; border:1px solid rgba(255,255,255,.14); background:rgba(12,15,20,.82); max-width:860px; }
+    .status-alert strong { display:block; font-size:20px; margin-bottom:6px; color:var(--paper); }
+    .status-alert p { margin:0; max-width:none; color:#d9e1eb; font-size:15px; line-height:1.6; }
+    .status-alert ul { margin:10px 0 0; padding-left:19px; color:#d9e1eb; font-size:14px; line-height:1.6; }
+    .status-alert a { color:var(--blue-2); }
+    .status-alert.has-failures { border-left:4px solid var(--warn); }
+    .status-alert.ok { border-left:4px solid var(--ok); }
+    main { background:var(--bg); }
+    section { padding:76px 0; border-bottom:1px solid var(--line); }
+    .section-head { display:grid; grid-template-columns:minmax(0, 1fr) auto; gap:20px; align-items:end; margin-bottom:30px; }
+    h2 { margin:0; font-size:clamp(30px, 4vw, 54px); line-height:1; }
+    .section-note { color:var(--muted); max-width:600px; line-height:1.7; }
+    .date-pill { border-left:2px solid var(--blue); padding-left:14px; color:#dce7f6; font-size:14px; white-space:nowrap; }
+    .news-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:14px; }
+    .news-item { border:1px solid var(--line); background:linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.02)); padding:22px; min-height:320px; display:grid; grid-template-rows:auto auto 1fr auto; gap:16px; }
+    .news-top { display:flex; justify-content:space-between; gap:14px; color:var(--muted); font-size:13px; }
+    .source-tag { color:var(--blue-2); font-weight:700; }
+    .news-item h3 { margin:0; font-size:24px; line-height:1.18; }
+    .news-copy { display:grid; gap:10px; color:#c8d0dc; line-height:1.65; font-size:15px; }
+    .label { color:var(--paper); font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
+    .card-link { width:fit-content; color:var(--paper); text-decoration:none; border-bottom:1px solid var(--blue); padding-bottom:4px; font-size:14px; }
+    .verify-band { display:grid; grid-template-columns:1.05fr .95fr; gap:18px; align-items:stretch; }
+    .panel { border:1px solid var(--line); background:var(--panel); padding:24px; }
+    .panel h3 { margin:0 0 14px; font-size:22px; }
+    .checks { display:grid; gap:12px; color:#d1d8e2; line-height:1.6; }
+    .check { display:grid; grid-template-columns:13px 1fr; gap:10px; align-items:start; }
+    .dot { width:8px; height:8px; margin-top:8px; background:var(--ok); }
+    .watchlist { display:flex; flex-wrap:wrap; gap:9px; }
+    .watchlist span { padding:8px 10px; border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.035); color:#d8dee8; font-size:13px; }
+    .watchlist .pending { color:var(--warn); border-color:rgba(242,207,126,.32); }
+    .papers { display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:14px; }
+    .paper { border:1px solid var(--line); background:var(--panel-2); padding:20px; display:grid; gap:12px; min-height:270px; }
+    .paper h3 { margin:0; font-size:19px; line-height:1.25; }
+    .paper p { margin:0; color:#c4ccd8; line-height:1.6; font-size:14px; }
+    .paper-meta { color:var(--blue-2); font-size:13px; font-weight:700; }
+    .source-list { columns:2; column-gap:32px; color:#c8d0dc; line-height:1.9; font-size:14px; }
+    .source-list a { color:#dfe7f3; text-decoration-color:rgba(77,163,255,.7); }
+    footer { padding:36px 0 52px; color:var(--muted); font-size:13px; }
+    @media (max-width:860px) { .nav-links{display:none} .section-head,.verify-band,.news-grid,.papers{grid-template-columns:1fr} .date-pill{white-space:normal} .source-list{columns:1} header{min-height:88vh} .news-item{min-height:auto} }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="nav-inner">
-      <div class="brand"><span class="mark">AI</span><span>Frontier Radar</span></div>
-      <div class="nav-links">
-        <a href="#news">AI资讯</a>
-        <a href="#verify">核验规则</a>
-        <a href="#papers">前沿文献</a>
-        <a href="#sources">来源索引</a>
+  <nav><div class="nav-inner"><div class="brand"><span class="mark">AI</span><span>Frontier Radar</span></div><div class="nav-links"><a href="#news">AI资讯</a><a href="#verify">核验规则</a><a href="#papers">前沿文献</a><a href="#sources">来源索引</a></div></div></nav>
+  <header><div class="shell hero"><div class="eyebrow"><span class="pulse"></span>Verified AI Intelligence</div><h1>AI资讯核验与前沿文献雷达</h1><p>聚合公开渠道中的 AI 产品、模型、安全、产业与研究动态。每日自动刷新官方公开来源；社媒内容进入待核验池，不将传闻写成事实。</p><div class="hero-meta"><span class="chip">页面日期：2026-09-14</span><span class="chip">最近自动更新：2026-09-14T12:53:01Z</span><span class="chip">本期资讯：8 条</span><span class="chip">重点覆盖：OpenAI / Google / Microsoft / Anthropic / 百度 / 腾讯</span></div><div class="family-note">此网页仅供波家人参考</div>
+    <div class="status-alert has-failures">
+      <div>
+        <strong>部分来源抓取失败</strong>
+        <p>本次未能自动抓取：OpenAI 官网（OpenAI News）。 其中 1 个来源已使用人工核验保底条目；其余来源未写入新资讯。</p>
+        <ul><li><a href="https://openai.com/news/" target="_blank" rel="noreferrer">OpenAI 官网</a>：HTTP Error 403: Forbidden</li></ul>
       </div>
-    </div>
-  </nav>
-
-  <header>
-    <div class="shell hero">
-      <div class="eyebrow"><span class="pulse"></span>Verified AI Intelligence</div>
-      <h1>AI资讯核验与前沿文献雷达</h1>
-      <p>聚合公开渠道中的 AI 产品、模型、安全、产业与研究动态。首版仅采用可追溯到官网、官方博客、公告或论文入口的信息；社媒内容进入待核验池。</p>
-      <div class="hero-meta">
-        <span class="chip">生成日期：2026-09-14</span>
-        <span class="chip">本期资讯：8 条</span>
-        <span class="chip">重点覆盖：OpenAI / Google / Microsoft / Anthropic / 百度 / 腾讯</span>
-        <span class="chip">风格：黑白主调 + 蓝色信号</span>
-      </div>
-      <div class="family-note">此网页仅供波家人参考</div>
-    </div>
-  </header>
-
+    </div></div></header>
   <main>
-    <section id="news">
-      <div class="shell">
-        <div class="section-head">
-          <div>
-            <h2>本期AI资讯</h2>
-            <p class="section-note">按公开发布时间倒序整理。每条包含时间、背景、内容与来源渠道，标题与链接指向可核验原始页面。</p>
-          </div>
-          <div class="date-pill">观察窗口：2026-08-28 至 2026-09-11</div>
-        </div>
-
-        <div class="news-grid">
+    <section id="news"><div class="shell"><div class="section-head"><div><h2>本期AI资讯</h2><p class="section-note">按自动抓取到的公开发布时间倒序整理。每条记录原始链接；关键事实仍建议人工复核，尤其是参数、价格、榜单和监管表述。</p></div><div class="date-pill">每日 08:00 自动刷新，北京时间</div></div><div class="news-grid">
           <article class="news-item">
-            <div class="news-top"><span>2026-09-11</span><span class="source-tag">百度 AI 开放平台</span></div>
-            <h3>百度开放公测“文档矫正增强V2 / 文档去手写V2”</h3>
+            <div class="news-top"><span>2026-09-14</span><span class="source-tag">Anthropic News</span></div>
+            <h3>Try Claude</h3>
             <div class="news-copy">
-              <div><span class="label">背景</span> 文档智能处理、OCR 与企业数字化仍是国内 AI 落地的高频场景。</div>
-              <div><span class="label">内容</span> 百度 AI 开放平台更新文档矫正增强与去手写能力，并提供测试资源；同页还显示 PP-OCRv6 等近期商用动态。</div>
+              <div><span class="label">背景</span> 来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。</div>
+              <div><span class="label">内容</span> 官方页面已更新，需人工复核具体变更内容。</div>
             </div>
-            <a class="card-link" href="https://ai.baidu.com/support/news" target="_blank" rel="noreferrer">查看来源</a>
+            <a class="card-link" href="https://claude.ai/" target="_blank" rel="noreferrer">查看来源</a>
           </article>
 
           <article class="news-item">
-            <div class="news-top"><span>2026-09-10</span><span class="source-tag">OpenAI</span></div>
+            <div class="news-top"><span>2026-09-14</span><span class="source-tag">百度智能云</span></div>
+            <h3>AI原生应用商店</h3>
+            <div class="news-copy">
+              <div><span class="label">背景</span> 来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。</div>
+              <div><span class="label">内容</span> 精选众多AI原生应用，依托前沿的大模型能力，为企业与优秀AI应用搭建桥梁，推动企业业务增长和创新发展</div>
+            </div>
+            <a class="card-link" href="https://qianfanmarket.baidu.com/" target="_blank" rel="noreferrer">查看来源</a>
+          </article>
+
+          <article class="news-item">
+            <div class="news-top"><span>2026-09-14</span><span class="source-tag">腾讯云</span></div>
+            <h3>Latest AI update</h3>
+            <div class="news-copy">
+              <div><span class="label">背景</span> 来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。</div>
+              <div><span class="label">内容</span> 官方页面已更新，需人工复核具体变更内容。</div>
+            </div>
+            <a class="card-link" href="https://cloud.tencent.com/developer/news" target="_blank" rel="noreferrer">查看来源</a>
+          </article>
+
+          <article class="news-item">
+            <div class="news-top"><span>2026-09-10</span><span class="source-tag">OpenAI 官网</span></div>
             <h3>OpenAI 发布 Agents API 公测</h3>
             <div class="news-copy">
-              <div><span class="label">背景</span> 企业正在把长任务、多工具、可恢复的 AI agent 引入生产流程。</div>
+              <div><span class="label">背景</span> OpenAI 官网在自动抓取中可能返回 403；此条为人工核验过的保底条目，页面会继续保留原始来源链接。</div>
               <div><span class="label">内容</span> Agents API 将 Codex 背后的 agent harness 和基础设施开放给开发者，支持托管沙箱、MCP、工具搜索、并行子代理和长会话压缩。</div>
             </div>
             <a class="card-link" href="https://openai.com/index/introducing-the-agents-api/" target="_blank" rel="noreferrer">查看来源</a>
           </article>
 
           <article class="news-item">
-            <div class="news-top"><span>2026-09-10</span><span class="source-tag">Google Blog</span></div>
-            <h3>Google 推出 Windows 版 Gemini 桌面应用</h3>
+            <div class="news-top"><span>2026-09-10</span><span class="source-tag">百度 AI 开放平台</span></div>
+            <h3>未实名 立即认证</h3>
             <div class="news-copy">
-              <div><span class="label">背景</span> AI 助手正在从浏览器页面进入操作系统层面的日常工作流。</div>
-              <div><span class="label">内容</span> Windows 10/11 用户可通过 Alt + Space 快捷键调用 Gemini，用于写作、任务处理、接入 Google 应用信息，以及生成图像和视频。</div>
+              <div><span class="label">背景</span> 来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。</div>
+              <div><span class="label">内容</span> 官方页面已更新，需人工复核具体变更内容。</div>
             </div>
-            <a class="card-link" href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/" target="_blank" rel="noreferrer">查看来源</a>
+            <a class="card-link" href="https://console.bce.baidu.com/qualify/#/qualify/index" target="_blank" rel="noreferrer">查看来源</a>
           </article>
 
           <article class="news-item">
-            <div class="news-top"><span>2026-09-10</span><span class="source-tag">Anthropic</span></div>
-            <h3>Anthropic 发布 2026 年 9 月 AI 滥用威胁情报报告</h3>
+            <div class="news-top"><span>2026-08-13</span><span class="source-tag">Microsoft Source</span></div>
+            <h3>Signal blog</h3>
             <div class="news-copy">
-              <div><span class="label">背景</span> 模型能力提升后，安全关注点从提示滥用扩展到多代理、网络攻击与自动化工作流。</div>
-              <div><span class="label">内容</span> 报告覆盖 2025 年 12 月至 2026 年 8 月间被识别并处置的滥用案例，涉及网络行动、影响行动、诈骗、蒸馏等七类风险。</div>
+              <div><span class="label">背景</span> 来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。</div>
+              <div><span class="label">内容</span> Find out what’s new and what’s next for AI and tech — directly from Microsoft.</div>
             </div>
-            <a class="card-link" href="https://www.anthropic.com/threat-intelligence-report-september-2026" target="_blank" rel="noreferrer">查看来源</a>
+            <a class="card-link" href="https://news.microsoft.com/signal/" target="_blank" rel="noreferrer">查看来源</a>
           </article>
 
           <article class="news-item">
-            <div class="news-top"><span>2026-09-09 / 09-10</span><span class="source-tag">Microsoft Source</span></div>
-            <h3>Microsoft Source 集中更新 AI 治理、教育安全与产业应用报道</h3>
+            <div class="news-top"><span>2023-12-06</span><span class="source-tag">Google Blog</span></div>
+            <h3>Google DeepMind</h3>
             <div class="news-copy">
-              <div><span class="label">背景</span> 企业 AI 正从单点效率工具走向治理、合规、教育与行业标准。</div>
-              <div><span class="label">内容</span> Microsoft AI 新闻页在 9 月 9-10 日列出“下一代 AI 安全参与框架”、学校 AI 安全隐私标准、科学发现与媒体娱乐智能编排等多条动态。</div>
+              <div><span class="label">背景</span> 来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。</div>
+              <div><span class="label">内容</span> News from Google DeepMind about how we&#x27;re building AI responsibly to benefit everyone.</div>
             </div>
-            <a class="card-link" href="https://news.microsoft.com/source/tag/ai/?msockid=053b880312c266d30c1e9ef113e367e2" target="_blank" rel="noreferrer">查看来源</a>
+            <a class="card-link" href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/" target="_blank" rel="noreferrer">查看来源</a>
           </article>
 
           <article class="news-item">
-            <div class="news-top"><span>2026-09-01</span><span class="source-tag">Microsoft</span></div>
-            <h3>Microsoft 发布 2026 Responsible AI Transparency Report 相关说明</h3>
+            <div class="news-top"><span>2022-12-06</span><span class="source-tag">腾讯官网</span></div>
+            <h3>Skip to main content</h3>
             <div class="news-copy">
-              <div><span class="label">背景</span> Agentic AI、网络能力与监管要求让企业 AI 治理框架需要更动态。</div>
-              <div><span class="label">内容</span> Microsoft 表示其 Responsible AI Standard 已按模型、平台服务和应用等技术栈组件重构，并强化 agentic AI 治理、评估与滥用应对。</div>
+              <div><span class="label">背景</span> 来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。</div>
+              <div><span class="label">内容</span> 官方页面已更新，需人工复核具体变更内容。</div>
             </div>
-            <a class="card-link" href="https://blogs.microsoft.com/on-the-issues/2026/09/01/responsible-ai-in-2026-how-we-are-adapting-for-whats-ahead/" target="_blank" rel="noreferrer">查看来源</a>
-          </article>
-
-          <article class="news-item">
-            <div class="news-top"><span>2026-08-31</span><span class="source-tag">Google Blog</span></div>
-            <h3>Google Antigravity 与 Gemini 3.7 Flash 展示多智能体协作成果</h3>
-            <div class="news-copy">
-              <div><span class="label">背景</span> 多智能体团队正在成为复杂科研、软件与工程任务的核心实验范式。</div>
-              <div><span class="label">内容</span> Google 称 Antigravity Teamwork 框架可让自主 AI agent 团队协作、批判和迭代，并列举开放问题、RISC-V 仿真器与开源库优化案例。</div>
-            </div>
-            <a class="card-link" href="https://blog.google/innovation-and-ai/technology/developers-tools/antigravity-teamwork-multi-agent/" target="_blank" rel="noreferrer">查看来源</a>
-          </article>
-
-          <article class="news-item">
-            <div class="news-top"><span>2026-08-28</span><span class="source-tag">腾讯</span></div>
-            <h3>腾讯发布并开源 Hy4 preview</h3>
-            <div class="news-copy">
-              <div><span class="label">背景</span> 国内大模型竞争继续向开源、长上下文与真实生产力任务推进。</div>
-              <div><span class="label">内容</span> 腾讯称 Hy4 preview 总参数 770B、激活参数 49B、上下文长度突破 1M，并已在 WorkBuddy、CodeBuddy、元宝、ima 等产品上线。</div>
-            </div>
-            <a class="card-link" href="https://www.tencent.com/zh-cn/tencent-releases-and-open-sources-tencent-hy4-preview/" target="_blank" rel="noreferrer">查看来源</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="verify">
-      <div class="shell">
-        <div class="section-head">
-          <div>
-            <h2>核验规则</h2>
-            <p class="section-note">本页不是自动转载墙，而是“可核验摘要”。任何社媒爆料、截图、转述，如果不能追溯原始来源或交叉确认，都不会进入正式资讯流。</p>
-          </div>
-        </div>
-        <div class="verify-band">
-          <div class="panel">
-            <h3>进入主资讯流的最低标准</h3>
-            <div class="checks">
-              <div class="check"><span class="dot"></span><span>优先采用官网、官方博客、公告页、开发者文档、论文页、监管或会议页面。</span></div>
-              <div class="check"><span class="dot"></span><span>每条必须记录发布时间、主体、背景、关键事实和原始链接。</span></div>
-              <div class="check"><span class="dot"></span><span>对社媒内容，要求原帖链接与至少一个可信来源交叉确认；无法确认时标注为待核验，不写入“已确认”。</span></div>
-              <div class="check"><span class="dot"></span><span>对模型能力、榜单和参数等数字，不从二手摘要转录；只使用官方页面或论文中可定位的信息。</span></div>
-            </div>
-          </div>
-          <div class="panel">
-            <h3>覆盖渠道状态</h3>
-            <div class="watchlist">
-              <span>OpenAI 官网</span>
-              <span>Google Blog</span>
-              <span>Microsoft Source</span>
-              <span>Anthropic News</span>
-              <span>百度 AI 开放平台</span>
-              <span>百度智能云</span>
-              <span>腾讯官网</span>
-              <span>腾讯云公告</span>
-              <span class="pending">知乎：待接入核验</span>
-              <span class="pending">微博：待接入核验</span>
-              <span class="pending">抖音：待接入核验</span>
-              <span class="pending">微信公众号：待接入核验</span>
-              <span class="pending">小红书：待接入核验</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="papers">
-      <div class="shell">
-        <div class="section-head">
-          <div>
-            <h2>AI 与控制前沿文献</h2>
-            <p class="section-note">方向先占位为“AI control / 智能体安全 / LLM+RL 控制 / 楼宇与机器人控制”。后续可按你的研究方向细分为自动控制、智能制造、机器人、能源系统、具身智能或 AI 安全。</p>
-          </div>
-          <div class="date-pill">种子文献：国内外混合</div>
-        </div>
-
-        <div class="papers">
+            <a class="card-link" href="https://www.tencent.com/zh-cn/newsroom/all-news/#main" target="_blank" rel="noreferrer">查看来源</a>
+          </article></div></div></section>
+    <section id="verify"><div class="shell"><div class="section-head"><div><h2>核验规则</h2><p class="section-note">本页不是自动转载墙，而是可核验摘要。自动化只处理官方或可信公开页面；社媒爆料、截图、转述需要原帖与可信来源交叉确认。</p></div></div><div class="verify-band"><div class="panel"><h3>进入主资讯流的最低标准</h3><div class="checks"><div class="check"><span class="dot"></span><span>优先采用官网、官方博客、公告页、开发者文档、论文页、监管或会议页面。</span></div><div class="check"><span class="dot"></span><span>每条必须记录发布时间、主体、背景、关键事实和原始链接。</span></div><div class="check"><span class="dot"></span><span>对社媒内容，要求原帖链接与至少一个可信来源交叉确认；无法确认时标注为待核验。</span></div><div class="check"><span class="dot"></span><span>抓取失败或结构变化时不编造资讯，页面保留上次结果或提示需人工检查。</span></div></div></div><div class="panel"><h3>覆盖渠道状态</h3><div class="watchlist"><span>OpenAI 官网</span><span>Google Blog</span><span>Microsoft Source</span><span>Anthropic News</span><span>百度 AI 开放平台</span><span>百度智能云</span><span>腾讯官网</span><span>腾讯云动态</span><span class="pending">知乎：待人工核验</span><span class="pending">微博：待人工核验</span><span class="pending">抖音：待人工核验</span><span class="pending">微信公众号：待人工核验</span><span class="pending">小红书：待人工核验</span></div></div></div></div></section>
+    <section id="papers"><div class="shell"><div class="section-head"><div><h2>AI 与控制前沿文献</h2><p class="section-note">方向先占位为 AI control、智能体安全、LLM+RL 控制、楼宇与机器人控制。后续可按你的研究方向继续收窄。</p></div><div class="date-pill">种子文献：国内外混合</div></div><div class="papers">
           <article class="paper">
             <div class="paper-meta">AI Safety / Control</div>
             <h3>AI Control: Improving Safety Despite Intentional Subversion</h3>
@@ -569,28 +169,28 @@
           <article class="paper">
             <div class="paper-meta">Frontier Alignment / 2026</div>
             <h3>Diffuse AI Control on Fuzzy Tasks</h3>
-            <p>Anthropic Alignment Science Blog 2026 年文章，研究在难以评分的“模糊任务”中如何评估和改进弱评分器对强模型蓄意规避的鲁棒性。</p>
+            <p>Anthropic Alignment Science Blog 文章，研究在难以评分的模糊任务中如何评估和改进弱评分器对强模型蓄意规避的鲁棒性。</p>
             <a class="card-link" href="https://alignment.anthropic.com/2026/diffuse-ai-control/" target="_blank" rel="noreferrer">Anthropic Alignment</a>
           </article>
 
           <article class="paper">
-            <div class="paper-meta">AI R&D Evaluation / 2026</div>
-            <h3>ResearchArena: Evaluating Sabotage and Monitoring in Automated AI R&D</h3>
-            <p>围绕自动化 AI 研发中的研究破坏与监控评估构建测试场景，适合放入“智能体安全与科研自动化风险”文献池。</p>
+            <div class="paper-meta">AI R&amp;D Evaluation / 2026</div>
+            <h3>ResearchArena: Evaluating Sabotage and Monitoring in Automated AI R&amp;D</h3>
+            <p>围绕自动化 AI 研发中的研究破坏与监控评估构建测试场景，适合放入智能体安全与科研自动化风险文献池。</p>
             <a class="card-link" href="https://kurate.org/paper/43d6199c-5b7d-4ef8-99ac-d00dcaafb672" target="_blank" rel="noreferrer">Kurate / arXiv</a>
           </article>
 
           <article class="paper">
             <div class="paper-meta">Control + LLM + RL / 2026</div>
             <h3>Hierarchical Control Framework Integrating LLMs with RL for Decarbonized HVAC Operation</h3>
-            <p>包含清华相关作者的楼宇控制研究：使用 LLM 生成动作掩码，再由 RL 在约束空间内优化舒适度与能耗。</p>
+            <p>楼宇控制研究：使用 LLM 生成动作掩码，再由 RL 在约束空间内优化舒适度与能耗。</p>
             <a class="card-link" href="https://arxiv.org/abs/2603.26050" target="_blank" rel="noreferrer">arXiv</a>
           </article>
 
           <article class="paper">
             <div class="paper-meta">Smart Building / China Data / 2026</div>
             <h3>Video-based Indoor Occupancy Measurement with Occupant-centric Control</h3>
-            <p>基于中国研究实验室真实监控数据，将 YOLO、DeepSeek 等管线用于 occupancy measurement，并接入 HVAC 监督 MPC。</p>
+            <p>基于中国研究实验室真实监控数据，将视觉识别管线用于 occupancy measurement，并接入 HVAC 监督 MPC。</p>
             <a class="card-link" href="https://arxiv.org/abs/2603.26081" target="_blank" rel="noreferrer">arXiv</a>
           </article>
 
@@ -599,41 +199,16 @@
             <h3>Hybrid Framework for Robotic Manipulation: Integrating RL and LLMs</h3>
             <p>将低层强化学习控制与高层 LLM 任务规划结合，用于机械臂操作任务，是具身智能与控制结合的典型入口。</p>
             <a class="card-link" href="https://arxiv.org/abs/2603.30022" target="_blank" rel="noreferrer">arXiv</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="sources">
-      <div class="shell">
-        <div class="section-head">
-          <div>
-            <h2>来源索引</h2>
-            <p class="section-note">首版页面内引用的公开来源。后续可把该区扩展成可筛选资料库，支持按公司、渠道、主题、可信度、是否交叉验证检索。</p>
-          </div>
-        </div>
-        <div class="source-list">
-          <p><a href="https://openai.com/news/" target="_blank" rel="noreferrer">OpenAI News</a></p>
-          <p><a href="https://openai.com/index/introducing-the-agents-api/" target="_blank" rel="noreferrer">OpenAI Agents API</a></p>
-          <p><a href="https://blog.google/innovation-and-ai/technology/ai/" target="_blank" rel="noreferrer">Google AI Blog</a></p>
-          <p><a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/" target="_blank" rel="noreferrer">Gemini app for Windows</a></p>
-          <p><a href="https://news.microsoft.com/source/tag/ai/?msockid=053b880312c266d30c1e9ef113e367e2" target="_blank" rel="noreferrer">Microsoft Source AI</a></p>
-          <p><a href="https://blogs.microsoft.com/on-the-issues/2026/09/01/responsible-ai-in-2026-how-we-are-adapting-for-whats-ahead/" target="_blank" rel="noreferrer">Microsoft Responsible AI 2026</a></p>
-          <p><a href="https://www.anthropic.com/news" target="_blank" rel="noreferrer">Anthropic Newsroom</a></p>
-          <p><a href="https://www.anthropic.com/threat-intelligence-report-september-2026" target="_blank" rel="noreferrer">Anthropic Threat Intelligence Report</a></p>
-          <p><a href="https://ai.baidu.com/support/news" target="_blank" rel="noreferrer">百度 AI 开放平台新闻</a></p>
+          </article></div></div></section>
+    <section id="sources"><div class="shell"><div class="section-head"><div><h2>来源索引</h2><p class="section-note">自动刷新脚本使用的公开来源。后续可以加入 RSS、API、人工审核队列和可信度评分。</p></div></div><div class="source-list">          <p><a href="https://openai.com/news/" target="_blank" rel="noreferrer">OpenAI News</a></p>
+          <p><a href="https://blog.google/technology/ai/" target="_blank" rel="noreferrer">Google AI Blog</a></p>
+          <p><a href="https://news.microsoft.com/source/tag/ai/" target="_blank" rel="noreferrer">Microsoft Source AI</a></p>
+          <p><a href="https://www.anthropic.com/news" target="_blank" rel="noreferrer">Anthropic News</a></p>
+          <p><a href="https://ai.baidu.com/support/news" target="_blank" rel="noreferrer">百度 AI 开放平台</a></p>
           <p><a href="https://cloud.baidu.com/news/news" target="_blank" rel="noreferrer">百度智能云新闻</a></p>
-          <p><a href="https://www.tencent.com/zh-cn/newsroom/all-news/" target="_blank" rel="noreferrer">腾讯全部新闻</a></p>
-          <p><a href="https://www.tencent.com/zh-cn/tencent-releases-and-open-sources-tencent-hy4-preview/" target="_blank" rel="noreferrer">腾讯 Hy4 preview</a></p>
-          <p><a href="https://www.redwoodresearch.org/research/ai-control" target="_blank" rel="noreferrer">Redwood Research AI Control</a></p>
-          <p><a href="https://arxiv.org/abs/2603.26050" target="_blank" rel="noreferrer">LLM + RL HVAC Control</a></p>
-        </div>
-      </div>
-    </section>
+          <p><a href="https://www.tencent.com/zh-cn/newsroom/all-news/" target="_blank" rel="noreferrer">腾讯新闻</a></p>
+          <p><a href="https://cloud.tencent.com/developer/news" target="_blank" rel="noreferrer">腾讯云动态</a></p></div></div></section>
   </main>
-
-  <footer>
-    <div class="shell">AI Frontier Radar prototype. 静态预览页，后续可接入抓取、去重、可信度评分、人工审核与自动更新。</div>
-  </footer>
+  <footer><div class="shell">AI Frontier Radar prototype. 自动刷新由 GitHub Actions 执行；最后生成时间：2026-09-14T12:53:01Z。</div></footer>
 </body>
 </html>
