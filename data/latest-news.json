@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-09-22T00:21:18.726796Z",
+  "generated_at": "2026-09-23T00:20:50.862450Z",
   "news": [
     {
-      "date": "2026-09-22",
+      "date": "2026-09-23",
       "channel": "百度智能云",
       "title": "AI原生应用商店",
       "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
@@ -12,13 +12,23 @@
       "status": "official-source"
     },
     {
-      "date": "2026-09-22",
+      "date": "2026-09-23",
       "channel": "腾讯云",
       "title": "Latest AI update",
       "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
       "content": "官方页面已更新，需人工复核具体变更内容。",
       "url": "https://cloud.tencent.com/developer/news",
       "source": "腾讯云动态",
+      "status": "official-source"
+    },
+    {
+      "date": "2026-09-22",
+      "channel": "百度 AI 开放平台",
+      "title": "未实名 立即认证",
+      "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
+      "content": "官方页面已更新，需人工复核具体变更内容。",
+      "url": "https://console.bce.baidu.com/qualify/#/qualify/index",
+      "source": "百度 AI 开放平台",
       "status": "official-source"
     },
     {
@@ -30,16 +40,6 @@
       "url": "https://openai.com/index/introducing-the-agents-api/",
       "source": "OpenAI News",
       "status": "manual-verified-fallback"
-    },
-    {
-      "date": "2026-09-10",
-      "channel": "百度 AI 开放平台",
-      "title": "未实名 立即认证",
-      "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
-      "content": "官方页面已更新，需人工复核具体变更内容。",
-      "url": "https://console.bce.baidu.com/qualify/#/qualify/index",
-      "source": "百度 AI 开放平台",
-      "status": "official-source"
     },
     {
       "date": "2026-08-13",
