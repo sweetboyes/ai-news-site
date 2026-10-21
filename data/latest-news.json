@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-20T04:23:05.834998Z",
+  "generated_at": "2026-10-21T04:13:00.791263Z",
   "news": [
     {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "channel": "百度智能云",
       "title": "AI原生应用商店",
       "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
@@ -12,7 +12,7 @@
       "status": "official-source"
     },
     {
-      "date": "2026-10-20",
+      "date": "2026-10-21",
       "channel": "腾讯云",
       "title": "Latest AI update",
       "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
@@ -22,7 +22,7 @@
       "status": "official-source"
     },
     {
-      "date": "2026-10-19",
+      "date": "2026-10-20",
       "channel": "百度 AI 开放平台",
       "title": "未实名 立即认证",
       "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
@@ -49,6 +49,16 @@
       "content": "Find out what’s new and what’s next for AI and tech — directly from Microsoft.",
       "url": "https://news.microsoft.com/signal/",
       "source": "Microsoft Source AI",
+      "status": "official-source"
+    },
+    {
+      "date": "2026-03-24",
+      "channel": "Anthropic News",
+      "title": "The making of Claude Code",
+      "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
+      "content": "The inside story of how Claude Code went from an internal CLI to Anthropic's coding agent, told by researchers, engineers and early users who built it.",
+      "url": "https://www.anthropic.com/features/making-of-claude-code",
+      "source": "Anthropic News",
       "status": "official-source"
     },
     {
@@ -79,13 +89,6 @@
       "url": "https://openai.com/news/",
       "error": "HTTP Error 403: Forbidden",
       "used_fallback": "yes"
-    },
-    {
-      "source": "Anthropic News",
-      "channel": "Anthropic News",
-      "url": "https://www.anthropic.com/news",
-      "error": "HTTP Error 403: Forbidden",
-      "used_fallback": "no"
     }
   ]
 }
