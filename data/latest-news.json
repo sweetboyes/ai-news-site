@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-29T05:18:42.280322Z",
+  "generated_at": "2026-10-30T05:18:04.500849Z",
   "news": [
     {
-      "date": "2026-10-29",
+      "date": "2026-10-30",
       "channel": "百度智能云",
       "title": "AI原生应用商店",
       "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
@@ -13,16 +13,6 @@
     },
     {
       "date": "2026-10-29",
-      "channel": "腾讯云",
-      "title": "Latest AI update",
-      "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
-      "content": "官方页面已更新，需人工复核具体变更内容。",
-      "url": "https://cloud.tencent.com/developer/news",
-      "source": "腾讯云动态",
-      "status": "official-source"
-    },
-    {
-      "date": "2026-10-20",
       "channel": "百度 AI 开放平台",
       "title": "未实名 立即认证",
       "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
@@ -79,6 +69,16 @@
       "content": "官方页面已更新，需人工复核具体变更内容。",
       "url": "https://www.tencent.com/zh-cn/newsroom/all-news/#main",
       "source": "腾讯新闻",
+      "status": "official-source"
+    },
+    {
+      "date": "2021-07-05",
+      "channel": "腾讯云",
+      "title": "01 对话祥峰中国夏志进：AI技术不会出现革命性突破，更关注深入产业降本增效 2026-10-30",
+      "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
+      "content": "过去十年间，人工智能（AI）从实验室走向产业化生产，重塑传统行业模式、引领未来的价值已经凸显，并为全球经济和社会活动做出了不容忽视的贡献。 同时，AI投资机遇也持续释放。据《中国新一代人工智能科技产业区域竞争力评价指数2021》报告显示，截至2020年年底，中国AI技术相关企业已达2205家、投资者3741个，20...",
+      "url": "https://cloud.tencent.com/developer/news/841335",
+      "source": "腾讯云动态",
       "status": "official-source"
     }
   ],
