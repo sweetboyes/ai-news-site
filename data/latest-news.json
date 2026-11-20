@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-11-19T06:54:27.800648Z",
+  "generated_at": "2026-11-20T06:44:55.086425Z",
   "news": [
     {
-      "date": "2026-11-19",
+      "date": "2026-11-20",
       "channel": "Anthropic News",
       "title": "The making of Claude Code",
       "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
@@ -12,7 +12,7 @@
       "status": "official-source"
     },
     {
-      "date": "2026-11-19",
+      "date": "2026-11-20",
       "channel": "百度智能云",
       "title": "AI原生应用商店",
       "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
@@ -32,6 +32,16 @@
       "status": "official-source"
     },
     {
+      "date": "2026-10-15",
+      "channel": "Microsoft Source",
+      "title": "Signal magazine",
+      "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
+      "content": "官方页面已更新，需人工复核具体变更内容。",
+      "url": "https://news.microsoft.com/microsoft-signal/magazine/",
+      "source": "Microsoft Source AI",
+      "status": "official-source"
+    },
+    {
       "date": "2026-09-10",
       "channel": "OpenAI 官网",
       "title": "OpenAI 发布 Agents API 公测",
@@ -40,16 +50,6 @@
       "url": "https://openai.com/index/introducing-the-agents-api/",
       "source": "OpenAI News",
       "status": "manual-verified-fallback"
-    },
-    {
-      "date": "2026-08-13",
-      "channel": "Microsoft Source",
-      "title": "Signal blog",
-      "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
-      "content": "Find out what’s new and what’s next for AI and tech — directly from Microsoft.",
-      "url": "https://news.microsoft.com/signal/",
-      "source": "Microsoft Source AI",
-      "status": "official-source"
     },
     {
       "date": "2023-12-06",
@@ -74,7 +74,7 @@
     {
       "date": "2021-07-05",
       "channel": "腾讯云",
-      "title": "01 对话祥峰中国夏志进：AI技术不会出现革命性突破，更关注深入产业降本增效 2026-11-19",
+      "title": "01 对话祥峰中国夏志进：AI技术不会出现革命性突破，更关注深入产业降本增效 2026-11-20",
       "background": "来自官方或可信公开页面的自动抓取条目；已记录原始来源，仍建议对关键数字和政策表述做人工复核。",
       "content": "过去十年间，人工智能（AI）从实验室走向产业化生产，重塑传统行业模式、引领未来的价值已经凸显，并为全球经济和社会活动做出了不容忽视的贡献。 同时，AI投资机遇也持续释放。据《中国新一代人工智能科技产业区域竞争力评价指数2021》报告显示，截至2020年年底，中国AI技术相关企业已达2205家、投资者3741个，20...",
       "url": "https://cloud.tencent.com/developer/news/841335",
